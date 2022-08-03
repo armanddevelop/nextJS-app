@@ -1,0 +1,26 @@
+{
+  "name": "platzi-nextjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "dev:inspect": "npm --node-options=--inspect=0.0.0.0:9229 run dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "armando salamanca ayon",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^12.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.3",
+    "@types/react": "^18.0.15",
+    "typescript": "^4.7.4"
+  }
+}

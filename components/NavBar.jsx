@@ -1,0 +1,20 @@
+import Link from "next/link";
+
+const NavBar = () => {
+  return (
+    <div>
+      <nav>
+        <menu>
+          <Link href="/">
+            <a>Home</a>
+          </Link>
+          <Link href="/About">
+            <a>About</a>
+          </Link>
+        </menu>
+      </nav>
+    </div>
+  );
+};
+
+export default NavBar;
