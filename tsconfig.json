@@ -8,6 +8,9 @@
       "@cors": [
         "cors-middleware.ts"
       ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
       "@components/*": [
         "components/*"
       ],

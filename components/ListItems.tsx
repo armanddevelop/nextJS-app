@@ -3,8 +3,7 @@ interface propsListItems {
   id: string;
 }
 
-const ListItems = (props: propsListItems) => {
-  const { name, id } = props;
+const ListItems = ({ name, id }: propsListItems) => {
   return (
     <li key={id}>
       <span>{name}</span>

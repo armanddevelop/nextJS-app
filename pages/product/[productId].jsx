@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import useItem from "../../hooks/useItem";
+import useItem from "@hooks/useItem";
 
 const ProductItem = () => {
   const {
