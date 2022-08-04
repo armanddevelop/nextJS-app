@@ -1,9 +1,19 @@
 import { useRouter } from "next/router";
+import useItem from "../../hooks/useItem";
 
 const ProductItem = () => {
   const {
     query: { productId },
   } = useRouter();
-  return <h1>Esta es una pagina dinamica {productId}</h1>;
+  const {
+    item: { name, sku, price },
+  } = useItem(productId);
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>{sku}</p>
+      <p>{price}</p>
+    </div>
+  );
 };
 export default ProductItem;
