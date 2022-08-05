@@ -1,14 +1,15 @@
-interface propsListItems {
-  name: string;
-  id: string;
-}
+import { CartItemType } from "@store/cart";
+type ListItemsProps = {
+  items: CartItemType[];
+};
 
-const ListItems = (props: propsListItems) => {
-  const { name, id } = props;
+const ListItems = ({ items }: ListItemsProps) => {
   return (
-    <li key={id}>
-      <span>{name}</span>
-    </li>
+    <ul>
+      {items.map(({ id, name }) => (
+        <li key={id}>{name}</li>
+      ))}
+    </ul>
   );
 };
 
