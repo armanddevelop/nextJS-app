@@ -5,9 +5,9 @@ const Home = () => {
   return (
     <div>
       <h1>Avocados</h1>
-      <ul>
+      <div>
         <ListItems items={items} />
-      </ul>
+      </div>
     </div>
   );
 };
