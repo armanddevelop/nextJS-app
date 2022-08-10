@@ -23,7 +23,6 @@ const ProductItem = () => {
           </div>
         </div>
       </section>
-
       {Object.entries(item).length === 0 ? null : (
         <DescriptionItem item={item} />
       )}
