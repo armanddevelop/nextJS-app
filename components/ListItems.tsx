@@ -1,10 +1,5 @@
-import {
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import { Grid } from "@mui/material";
+import CardItem from "./CardItem";
 import { CartItemType } from "@store/cart";
 
 type ListItemsProps = {
@@ -13,21 +8,13 @@ type ListItemsProps = {
 
 const ListItems = ({ items }: ListItemsProps) => {
   return (
-    <div>
-      {items.map(({ id, name, price, image }) => (
-        <Card key={id} sx={{ maxWidth: 345 }}>
-          <CardMedia component="img" height="200" image={image} alt={name} />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {name}
-            </Typography>
-            <Typography variant="subtitle1" color="text.secondary">
-              {price}
-            </Typography>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
+    <Grid container spacing={2}>
+      <Grid item xs={8}>
+        {items.map(({ id, name, price, image }) => (
+          <CardItem key={id} id={id} name={name} price={price} image={image} />
+        ))}
+      </Grid>
+    </Grid>
   );
 };
 

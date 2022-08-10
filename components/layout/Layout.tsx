@@ -10,10 +10,8 @@ const Layout = ({ children }: Props) => {
   return (
     <div>
       <NavBar />
-      <Container maxWidth="sm">
-        {children}
-        <footer className="container">This is the footer</footer>
-      </Container>
+      <Container maxWidth="md">{children}</Container>
+      <footer className="container">This is the footer</footer>
     </div>
   );
 };
