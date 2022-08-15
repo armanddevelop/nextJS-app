@@ -11,7 +11,7 @@ const ProductItem = () => {
   const { item } = useItem(productId);
   return (
     <>
-      <section>
+      <section className="photo-section">
         <div className={stylesProductId.item}>
           <div className={stylesProductId.image}>
             <img src={item.image} alt={item.name}></img>
@@ -36,6 +36,11 @@ const ProductItem = () => {
           <DescriptionItem item={item} />
         )}
       </section>
+      <style jsx>{`
+        .photo-section{
+          margin-top:20px;
+        }
+      `}</style>
     </>
   );
 };
