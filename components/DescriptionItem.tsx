@@ -24,7 +24,7 @@ const DescriptionItem = ({ item }: DescriptionItemProps) => {
   const rows = [attributes];
   const headers = buildHeaders(attributes);
   return (
-    <section>
+    <>
       <h3>About this Avocado</h3>
       <p>{attributes.description}</p>
       <Divider sx={{ margin: "25px" }} />
@@ -57,7 +57,7 @@ const DescriptionItem = ({ item }: DescriptionItemProps) => {
           </Table>
         </TableContainer>
       </Paper>
-    </section>
+    </>
   );
 };
 

@@ -10,9 +10,7 @@ const Layout = ({ children }: Props) => {
   return (
     <div>
       <NavBar />
-      <Container maxWidth="md" sx={{ margin: "20px" }}>
-        {children}
-      </Container>
+      <Container maxWidth="md">{children}</Container>
       <footer className="container">This is the footer</footer>
     </div>
   );
