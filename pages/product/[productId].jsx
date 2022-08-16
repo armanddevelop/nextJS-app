@@ -4,7 +4,6 @@ import useItem from "@hooks/useItem";
 import DescriptionItem from "@components/DescriptionItem";
 import stylesProductId from "./productId.module.css";
 
-
 const ProductItem = () => {
   const {
     query: { productId },
@@ -25,7 +24,10 @@ const ProductItem = () => {
             </div>
             <div className={stylesProductId.extra}>
               <TextField label="Qauntity" variant="outlined" type="number" />
-              <Button variant="outlined" className={stylesProductId.button}>
+              <Button
+                sx={{ display: "flex", "margin-top": "10px" }}
+                variant="outlined"
+              >
                 Add to cart
               </Button>
             </div>
@@ -38,8 +40,8 @@ const ProductItem = () => {
         )}
       </section>
       <style jsx>{`
-        .photo-section{
-          margin-top:20px;
+        .photo-section {
+          margin-top: 20px;
         }
       `}</style>
     </>
