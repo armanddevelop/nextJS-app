@@ -4,6 +4,7 @@ import useItem from "@hooks/useItem";
 import DescriptionItem from "@components/DescriptionItem";
 import stylesProductId from "./productId.module.css";
 
+
 const ProductItem = () => {
   const {
     query: { productId },

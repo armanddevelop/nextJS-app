@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import CardItem from "./CardItem";
 import { CartItemType } from "@store/cart";
 
+
 type ListItemsProps = {
   items: CartItemType[];
 };
