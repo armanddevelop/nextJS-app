@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import NavBar from "@components/NavBar";
-import { Container } from "@mui/material";
+import Footer from "@components/Footer";
+import { Container, Divider } from "@mui/material";
 
 interface Props {
   children: ReactNode;
@@ -9,8 +10,15 @@ const Layout = ({ children }: Props) => {
   return (
     <div>
       <NavBar />
-      <Container maxWidth="md">{children}</Container>
-      <footer className="container">This is the footer</footer>
+      <Container
+        sx={{ marginBottom: "20px" }}
+        className="principal-container"
+        maxWidth="md"
+      >
+        {children}
+      </Container>
+      <Divider />
+      <Footer />
     </div>
   );
 };
