@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@database": [
         "database/db.ts"
@@ -14,6 +14,7 @@
       "@components/*": [
         "components/*"
       ],
+      "@hooks/*":["hooks/*"],
       "@store/*": [
         "store/*"
       ]

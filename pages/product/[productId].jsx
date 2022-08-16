@@ -1,19 +1,48 @@
 import { useRouter } from "next/router";
+import { TextField, Button } from "@mui/material";
 import useItem from "@hooks/useItem";
+import DescriptionItem from "@components/DescriptionItem";
+import stylesProductId from "./productId.module.css";
+
 
 const ProductItem = () => {
   const {
     query: { productId },
   } = useRouter();
-  const {
-    item: { name, sku, price },
-  } = useItem(productId);
+  const { item } = useItem(productId);
   return (
-    <div>
-      <h1>{name}</h1>
-      <p>{sku}</p>
-      <p>{price}</p>
-    </div>
+    <>
+      <section className="photo-section">
+        <div className={stylesProductId.item}>
+          <div className={stylesProductId.image}>
+            <img src={item.image} alt={item.name}></img>
+          </div>
+          <div className={stylesProductId.contentDescription}>
+            <h1>{item.name}</h1>
+            <div>
+              <p>{item.price}</p>
+              <div className={stylesProductId.uiLabel}> SKU: {item.sku}</div>
+            </div>
+            <div className={stylesProductId.extra}>
+              <TextField label="Qauntity" variant="outlined" type="number" />
+              <Button variant="outlined" className={stylesProductId.button}>
+                Add to cart
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        {Object.entries(item).length === 0 ? null : (
+          <DescriptionItem item={item} />
+        )}
+      </section>
+      <style jsx>{`
+        .photo-section{
+          margin-top:20px;
+        }
+      `}</style>
+    </>
   );
 };
 export default ProductItem;
