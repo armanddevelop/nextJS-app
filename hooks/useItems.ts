@@ -6,7 +6,7 @@ export const useItems = () => {
   useEffect(() => {
     fetch("/api/v1/avo")
       .then((response) => response.json())
-      .then(({ data }) => {
+      .then(({ data }: TAPIAvoResponse) => {
         setItems(data);
       })
       .catch((e) => console.error(e));

@@ -32,3 +32,8 @@ type TAPIAvoResponse = {
   data: TProduct[];
   error?: string;
 };
+
+type BuyAvo = {
+  answer: string;
+  error: string | null;
+};
