@@ -61,3 +61,8 @@
 .extra {
   margin-top: 20px;
 }
+
+.button {
+  display: flex;
+  margin-top: 10px;
+}
