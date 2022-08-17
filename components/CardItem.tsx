@@ -2,7 +2,6 @@ import {
   Card,
   CardActionArea,
   CardMedia,
-  CardActions,
   CardContent,
   Typography,
 } from "@mui/material";
@@ -17,24 +16,21 @@ type CardItemProps = {
 
 const CardItem = ({ id, name, price, image }: CardItemProps) => {
   return (
-    <Card sx={{ maxWidth: 300 }}>
-      <CardActionArea>
-        <CardMedia component="img" height="200" image={image} alt={name} />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {name}
-          </Typography>
-          <Typography variant="subtitle1" color="text.secondary">
-            {price}
-          </Typography>
-          <CardActions>
-            <Link href={`/product/${id}`}>
-              <a>Learn More</a>
-            </Link>
-          </CardActions>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <Link href={`/product/${id}`}>
+      <Card sx={{ maxWidth: 300 }}>
+        <CardActionArea>
+          <CardMedia component="img" height="200" image={image} alt={name} />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {name}
+            </Typography>
+            <Typography variant="subtitle1" color="text.secondary">
+              {price}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
+    </Link>
   );
 };
 
