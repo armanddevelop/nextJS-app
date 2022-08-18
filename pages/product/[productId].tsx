@@ -4,11 +4,26 @@ import useItem from "@hooks/useItem";
 import DescriptionItem from "@components/DescriptionItem";
 import stylesProductId from "./productId.module.css";
 
+const getStaticProps = async () => {
+  try {
+    const urlBase = `https://next-js-app-snowy.vercel.app/api/v1/avo`;
+    const response = await fetch(urlBase);
+    const { data: productList }: TAPIAvoResponse = await response.json();
+    return {
+      props: {
+        productList,
+      },
+    };
+  } catch (error) {
+    console.error("[getServerSidePropsError]: ", error);
+  }
+};
+
 const ProductItem = () => {
   const {
     query: { productId },
   } = useRouter();
-  const { item } = useItem(productId);
+  const { item } = useItem(productId as string);
   return (
     <>
       <section className="photo-section">
