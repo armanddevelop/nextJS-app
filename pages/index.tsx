@@ -4,7 +4,7 @@ import fetch from "isomorphic-unfetch";
 import Loading from "@components/Loading";
 import ListItems from "@components/ListItems";
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const urlBase = `https://next-js-app-snowy.vercel.app/api/v1/avo`;
     const response = await fetch(urlBase);

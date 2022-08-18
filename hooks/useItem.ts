@@ -7,7 +7,7 @@ const useItem = (productId = "") => {
   useEffect(() => {
     fetch(`/api/v1/product/${productId}`)
       .then((response) => response.json())
-      .then((response) => setItem(response))
+      .then((response: TProduct) => setItem(response))
       .catch((e) => console.error(e));
   }, [productId]);
 
