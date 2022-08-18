@@ -23,22 +23,33 @@ const Home = ({ productList }: { productList: TProduct[] }) => {
   const loadComponent = () => {
     if (productList.length === 0) return <Loading />;
     return (
-      <div>
-        <h1>Avocados</h1>
+      <>
         <section className="buy-avo">
+          <h1>Avocados</h1>
           <Link href="/BuyAvo">
             <a>
               <h3>Should I buy an Avo Today?</h3>
             </a>
           </Link>
         </section>
-        <ListItems items={productList} />
+        <section className="avo-list">
+          <ListItems items={productList} />
+        </section>
         <style jsx>{`
           .buy-avo {
             margin-bottom: 20px;
+            text-align: center;
+          }
+          .avo-list {
+            margin-left: 10%;
+          }
+          @media (max-width: 760px) {
+            .avo-list {
+              margin-left: 3%;
+            }
           }
         `}</style>
-      </div>
+      </>
     );
   };
   return <>{loadComponent()}</>;
