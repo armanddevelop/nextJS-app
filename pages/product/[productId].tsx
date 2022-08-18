@@ -1,14 +1,52 @@
-import { useRouter } from "next/router";
+//import { useRouter } from "next/router";
+import { GetStaticProps } from "next";
 import { TextField, Button } from "@mui/material";
-import useItem from "@hooks/useItem";
+//import useItem from "@hooks/useItem";
 import DescriptionItem from "@components/DescriptionItem";
 import stylesProductId from "./productId.module.css";
 
-const ProductItem = () => {
-  const {
-    query: { productId },
-  } = useRouter();
-  const { item } = useItem(productId);
+export const getStaticPaths = async () => {
+  try {
+    const urlBase = `https://next-js-app-snowy.vercel.app/api/v1/avo`;
+    const response = await fetch(urlBase);
+    const { data: productList }: TAPIAvoResponse = await response.json();
+    const paths = productList.map(({ id }) => ({
+      params: {
+        productId: id,
+      },
+    }));
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (error) {
+    console.error("[getStaticPathsError]: ", error);
+  }
+};
+
+export const getStaticProps: GetStaticProps = async ({
+  params,
+}): Promise<any> => {
+  try {
+    const id = params?.productId as string;
+    const urlBase = `https://next-js-app-snowy.vercel.app/api/v1/product/${id}`;
+    const response = await fetch(urlBase);
+    const product: TProduct = await response.json();
+    return {
+      props: {
+        item: product,
+      },
+    };
+  } catch (error) {
+    console.error("[getServerSidePropsError]: ", error);
+  }
+};
+
+const ProductItem = ({ item }: { item: TProduct }) => {
+  // const {
+  //   query: { productId },
+  // } = useRouter();
+  // const { item } = useItem(productId as string);
   return (
     <>
       <section className="photo-section">
