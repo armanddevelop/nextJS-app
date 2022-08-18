@@ -21,6 +21,15 @@ class Database {
     await randomDelay();
     return entry;
   }
+
+  async getAnswer(): Promise<BuyAvo> {
+    const answer = Math.round(Math.random()) ? "yes" : "no";
+    await randomDelay();
+    return {
+      answer,
+      error: null,
+    };
+  }
 }
 
 // Let's also add a delay to make it a bit closer to reality

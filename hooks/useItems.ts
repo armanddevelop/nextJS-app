@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import fetch from "isomorphic-unfetch";
-const useItems = () => {
-  const [items, setItems] = useState([]);
+
+export const useItems = () => {
+  const [items, setItems] = useState<TProduct[]>([]);
   useEffect(() => {
     fetch("/api/v1/avo")
       .then((response) => response.json())
-      .then(({ data }) => {
+      .then(({ data }: TAPIAvoResponse) => {
         setItems(data);
       })
       .catch((e) => console.error(e));
   }, []);
   return { items };
 };
-
-export default useItems;

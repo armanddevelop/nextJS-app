@@ -24,10 +24,7 @@ const ProductItem = () => {
             </div>
             <div className={stylesProductId.extra}>
               <TextField label="Qauntity" variant="outlined" type="number" />
-              <Button
-                sx={{ display: "flex", "margin-top": "10px" }}
-                variant="outlined"
-              >
+              <Button className={stylesProductId.button} variant="outlined">
                 Add to cart
               </Button>
             </div>
