@@ -6,7 +6,7 @@ import ListItems from "@components/ListItems";
 
 export const getServerSideProps = async () => {
   try {
-    const urlBase = "http://localhost:3000/api/v1/avo";
+    const urlBase = `https://next-js-app-snowy.vercel.app/api/v1/avo`;
     const response = await fetch(urlBase);
     const { data: productList }: TAPIAvoResponse = await response.json();
     return {
