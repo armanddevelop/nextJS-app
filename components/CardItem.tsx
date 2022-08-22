@@ -6,6 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
+import Image from "next/image";
 
 type CardItemProps = {
   id: string;
@@ -19,7 +20,7 @@ const CardItem = ({ id, name, price, image }: CardItemProps) => {
     <Link href={`/product/${id}`}>
       <Card sx={{ maxWidth: 300 }}>
         <CardActionArea>
-          <CardMedia component="img" height="200" image={image} alt={name} />
+          <Image src={image} width="200" height="200" />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {name}

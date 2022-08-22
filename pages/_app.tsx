@@ -1,5 +1,9 @@
 import { AppProps } from "next/app";
 import Layout from "@components/layout/Layout";
+//add metric to nextjs
+// export function reportWebVitals(metric: any) {
+//   console.log("esto vale metric ", metric);
+// }
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
